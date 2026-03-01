@@ -1,115 +1,149 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ZankHuy | CV</title>
-  <style>
-    :root { color-scheme: dark; }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:#0b0f14; color:#e7eef7;
-      line-height:1.5;
-    }
-    a{ color:#8bbcff; text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-    .wrap{ width:min(980px, 92vw); margin:48px auto; }
-    header{
-      display:flex; gap:18px; align-items:flex-start; justify-content:space-between;
-      border:1px solid #223048; background:#111826; border-radius:16px; padding:24px;
-    }
-    .name{ margin:0; font-size:40px; letter-spacing:.2px; }
-    .role{ margin:6px 0 0; color:#a9b6c8; }
-    .meta{ text-align:right; color:#a9b6c8; font-size:14px; }
-    .grid{ display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; margin-top:18px; }
-    .card{
-      border:1px solid #223048; background:#111826; border-radius:16px; padding:22px;
-    }
-    h2{ margin:0 0 10px; font-size:16px; letter-spacing:.3px; text-transform:uppercase; color:#cfe0ff; }
-    ul{ margin:10px 0 0; padding-left:18px; }
-    li{ margin:8px 0; }
-    .item-title{ font-weight:600; }
-    .muted{ color:#a9b6c8; }
-    .pill{
-      display:inline-block; padding:6px 10px; border:1px solid #223048;
-      border-radius:999px; margin:6px 6px 0 0; color:#cbd7ea; font-size:13px;
-      background:#0f1724;
-    }
-    @media (max-width: 860px){
-      header{ flex-direction:column; }
-      .meta{ text-align:left; }
-      .grid{ grid-template-columns:1fr; }
-    }
-  </style>
+  <title>Nguyễn Danh Huy | Multimedia Producer</title>
+  <meta name="description" content="CV của Nguyễn Danh Huy - Multimedia Producer" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1 class="name">ZankHuy</h1>
-        <p class="role">Your Title (ex: Marketing & Ops • Logistics • Content)</p>
-        <p class="muted" style="margin:10px 0 0;">
-          2–3 lines about you. What you do, what you’re strong at, what you’re aiming for.
-        </p>
+  <main class="wrap">
+    <header class="hero">
+      <div class="hero-left">
+        <h1 class="name">Nguyễn Danh Huy</h1>
+        <p class="role">Multimedia Producer</p>
+
+        <div class="contact">
+          <a class="chip" href="tel:+84973015278" aria-label="Phone">+84 973 015 278</a>
+          <a class="chip" href="mailto:danhhuyconnect@gmail.com" aria-label="Email">danhhuyconnect@gmail.com</a>
+          <span class="chip chip-muted" aria-label="Location">Phường Từ Liêm, Hà Nội</span>
+        </div>
       </div>
-      <div class="meta">
-        <div><a href="mailto:you@email.com">you@email.com</a></div>
-        <div><a href="https://github.com/ZankHuy" target="_blank" rel="noreferrer">GitHub</a></div>
-        <div><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></div>
-        <div class="muted" style="margin-top:8px;">Hanoi, Vietnam</div>
+
+      <div class="hero-right">
+        <a class="btn" href="#links">Xem link</a>
+        <a class="btn btn-ghost" href="#contact">Liên hệ</a>
       </div>
     </header>
 
+    <section class="card">
+      <h2 class="section-title">Mục tiêu nghề nghiệp</h2>
+      <p class="text">
+        Phát triển kỹ năng sản xuất nội dung đa phương tiện, nâng cao năng lực quay dựng và hậu kỳ nhằm tạo ra các sản phẩm
+        truyền thông chất lượng cao, đồng thời từng bước trở thành Multimedia Producer chuyên nghiệp có khả năng quản lý và
+        phát triển các dự án truyền thông sáng tạo, hiệu quả và mang lại giá trị lâu dài cho doanh nghiệp.
+      </p>
+    </section>
+
     <div class="grid">
       <section class="card">
-        <h2>Experience</h2>
-        <ul>
-          <li>
-            <div class="item-title">Role – Company <span class="muted">| 2025–Present</span></div>
-            <div class="muted">1 line context (team / scope).</div>
-            <ul>
-              <li>Impact bullet with numbers if possible (CTR, revenue, ops time saved, etc.).</li>
-              <li>Another impact bullet. Keep it real, not fluffy.</li>
-            </ul>
-          </li>
-          <li style="margin-top:14px;">
-            <div class="item-title">Role – Company <span class="muted">| 2024–2025</span></div>
-            <ul>
-              <li>Impact bullet.</li>
-              <li>Impact bullet.</li>
-            </ul>
-          </li>
-        </ul>
+        <h2 class="section-title">Học vấn</h2>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <div class="item-title">Đại học Bách Khoa Hà Nội</div>
+              <div class="item-sub">Truyền thông số và Kỹ thuật đa phương tiện</div>
+            </div>
+            <div class="item-time">2021 – Hiện nay</div>
+          </div>
+
+          <ul class="bullets">
+            <li>Là sinh viên khóa đầu tiên của ngành mới nổi Truyền thông số và Kỹ thuật đa phương tiện thuộc Đại học Bách Khoa Hà Nội.</li>
+            <li>Dự kiến tốt nghiệp tháng 10-2026.</li>
+          </ul>
+        </article>
       </section>
 
       <aside class="card">
-        <h2>Skills</h2>
-        <div>
-          <span class="pill">Social Media</span>
-          <span class="pill">Content Strategy</span>
-          <span class="pill">E-commerce Ops</span>
-          <span class="pill">Excel/Sheets</span>
-          <span class="pill">Basic Web</span>
+        <h2 class="section-title">Kỹ năng</h2>
+        <div class="tags">
+          <span class="tag">Video Editing</span>
+          <span class="tag">Livestream Technician</span>
+          <span class="tag">Camera Operator</span>
+          <span class="tag">Post-Production Editor</span>
         </div>
 
-        <div style="height:18px;"></div>
+        <div class="spacer"></div>
 
-        <h2>Projects</h2>
-        <ul>
-          <li><span class="item-title">Project Name</span> – <span class="muted">1 line result.</span></li>
-          <li><span class="item-title">Project Name</span> – <span class="muted">1 line result.</span></li>
-        </ul>
-
-        <div style="height:18px;"></div>
-
-        <h2>Education</h2>
-        <ul>
-          <li><span class="item-title">School</span> <span class="muted">| Major | Year</span></li>
+        <h2 class="section-title">Chứng chỉ</h2>
+        <ul class="list">
+          <li><span class="strong">2021:</span> IELTS 6.0</li>
+          <li><span class="strong">2024:</span> VSTEP B2</li>
         </ul>
       </aside>
     </div>
-  </div>
+
+    <section class="card">
+      <h2 class="section-title">Hoạt động</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <div class="item-title">Photo/Video Technical</div>
+            <div class="item-sub">Dự án cá nhân</div>
+          </div>
+          <div class="item-time">2023 – Hiện nay</div>
+        </div>
+        <p class="text">
+          Kinh nghiệm sử dụng máy ảnh và thiết bị quay trong các dự án đơn lẻ, tập trung vào chụp ảnh chân dung, sự kiện và sản xuất
+          nội dung hình ảnh phục vụ mục đích cá nhân. Xử lý kỹ thuật nhằm đảm bảo chất lượng hình ảnh chuyên nghiệp. Đồng thời tham gia
+          ghi hình và hỗ trợ phát sóng trực tiếp trên các nền tảng mạng xã hội.
+        </p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <div class="item-title">Viện Nghiên cứu công nghệ không gian và dưới nước</div>
+            <div class="item-sub">Nghiên cứu & phát triển hệ thống drone cánh cố định</div>
+          </div>
+          <div class="item-time">2024 – 2025</div>
+        </div>
+        <p class="text">
+          Nghiên cứu và phát triển hệ thống drone cánh cố định, bao gồm thiết kế khí động học, tích hợp phần cứng điện tử, hệ thống điều
+          khiển bay và truyền thông. Tham gia thiết kế, mô phỏng, chế tạo, thử nghiệm và tối ưu hiệu suất để đảm bảo bay ổn định và truyền
+          dữ liệu tin cậy.
+        </p>
+      </article>
+    </section>
+
+    <section class="card" id="links">
+      <h2 class="section-title">Link</h2>
+      <p class="muted">Thay các dấu # bằng link thật của bạn.</p>
+
+      <div class="link-grid">
+        <a class="link-card" href="#" target="_blank" rel="noreferrer">
+          <div class="link-title">Sample Video</div>
+          <div class="link-sub">Showreel / demo</div>
+        </a>
+
+        <a class="link-card" href="#" target="_blank" rel="noreferrer">
+          <div class="link-title">Other</div>
+          <div class="link-sub">Portfolio / Drive / Behance</div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="footer-left">
+        <div class="small">© <span id="y"></span> Nguyễn Danh Huy</div>
+        <div class="small muted">Multimedia Producer</div>
+      </div>
+
+      <div class="footer-right">
+        <a class="btn btn-small" href="mailto:danhhuyconnect@gmail.com">Email</a>
+        <a class="btn btn-small btn-ghost" href="tel:+84973015278">Call</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
