@@ -168,6 +168,10 @@ const pngs = [
 ];
 const ALL = [...jpgs, ...pngs];
 
+function thumb(fullUrl) {
+  return fullUrl.replace('AI%20Images/', 'AI%20Images/thumbs/').replace(/\.png$/, '.jpg');
+}
+
 function img(src, lazy) {
   const el = document.createElement('img');
   el.src = src;
@@ -192,7 +196,7 @@ function img(src, lazy) {
     const col = document.createElement('div');
     col.className = `hero-col hero-col--${c.dir}`;
     col.style.setProperty('--dur', c.dur + 's');
-    const srcs = c.imgs.map(i => ALL[i % ALL.length]);
+    const srcs = c.imgs.map(i => thumb(ALL[i % ALL.length]));
     [...srcs, ...srcs].forEach(s => col.appendChild(img(s, false)));
     bg.appendChild(col);
   });
@@ -210,7 +214,7 @@ function img(src, lazy) {
     const inner = document.createElement('div');
     inner.className = 'marquee-inner';
     const srcs = [];
-    for (let i = 0; i < r.count; i++) srcs.push(ALL[(r.start + i) % ALL.length]);
+    for (let i = 0; i < r.count; i++) srcs.push(thumb(ALL[(r.start + i) % ALL.length]));
     [...srcs, ...srcs].forEach(s => {
       const wrap = document.createElement('div');
       wrap.className = 'marquee-img';
@@ -230,7 +234,7 @@ let currentLb = 0;
   ALL.forEach((src, i) => {
     const item = document.createElement('div');
     item.className = 'gallery-item reveal';
-    const image = img(src, true);
+    const image = img(thumb(src), true);
     item.appendChild(image);
     item.addEventListener('click', () => openLightbox(i));
     grid.appendChild(item);
@@ -244,9 +248,10 @@ const lbCounter = document.getElementById('lbCounter');
 
 function openLightbox(i) {
   currentLb = i;
+  lb.classList.add('active', 'lb-loading');
+  lbImg.onload = () => lb.classList.remove('lb-loading');
   lbImg.src = ALL[i];
   lbCounter.textContent = `${i + 1} / ${ALL.length}`;
-  lb.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
@@ -257,6 +262,8 @@ function closeLightbox() {
 
 function lbNavigate(dir) {
   currentLb = (currentLb + dir + ALL.length) % ALL.length;
+  lb.classList.add('lb-loading');
+  lbImg.onload = () => lb.classList.remove('lb-loading');
   lbImg.src = ALL[currentLb];
   lbCounter.textContent = `${currentLb + 1} / ${ALL.length}`;
 }
@@ -305,9 +312,7 @@ document.getElementById('hero').addEventListener('mousemove', e => {
 });
 
 /* ── Loader ── */
-window.addEventListener('load', () => {
-  document.getElementById('loader').classList.add('loaded');
-});
+setTimeout(() => document.getElementById('loader').classList.add('loaded'), 600);
 
 /* ── Year ── */
 document.getElementById('y').textContent = new Date().getFullYear();
