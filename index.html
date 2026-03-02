@@ -2,12 +2,12 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/zh-512.png">
-  <link rel="apple-touch-icon" href="/assets/icons/zh-512.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon/zh-512.png">
+  <link rel="apple-touch-icon" href="assets/icon/zh-512.png">
   <meta name="theme-color" content="#0b0f14">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nguyễn Danh Huy | AI Art Portfolio</title>
-  <meta name="description" content="AI Art Portfolio by Nguyễn Danh Huy - Multimedia Producer">
+  <title>Nguyễn Danh Huy | Multimedia Producer</title>
+  <meta name="description" content="Portfolio by Nguyễn Danh Huy - Multimedia Producer, AI Artist, Video Editor">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,22 +19,29 @@
     <div class="loader-bar"></div>
   </div>
 
+  <!-- ═══════ NAV ═══════ -->
   <nav class="nav" id="nav">
     <a href="#" class="nav-logo">DH<span class="nav-logo-dot">.</span></a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#skills">Skills</a>
       <a href="#gallery">Gallery</a>
+      <a href="#workflow">Workflow</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
+  <!-- ═══════ HERO ═══════ -->
   <section class="hero" id="hero">
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tag">AI Art Portfolio</p>
+      <p class="hero-tag">Multimedia Producer</p>
       <h1 class="hero-title">Nguyễn<br>Danh Huy</h1>
-      <p class="hero-sub">Multimedia Producer &amp; AI Artist</p>
+      <p class="hero-sub">Video Production &bull; AI Art &bull; Post-Production</p>
       <div class="hero-actions">
         <a href="#gallery" class="btn-primary">
           <span>Xem Gallery</span>
@@ -49,54 +56,79 @@
     </div>
   </section>
 
+  <!-- ═══════ MARQUEE ═══════ -->
   <section class="marquee-section">
     <div class="marquee-row" id="marquee1"></div>
     <div class="marquee-row marquee-reverse" id="marquee2"></div>
-    <div class="marquee-row" id="marquee3"></div>
   </section>
 
-  <section class="about" id="about">
+  <!-- ═══════ SKILLS ═══════ -->
+  <section class="skills" id="skills">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-left reveal">
-          <p class="section-label">About</p>
-          <h2 class="section-heading">Multimedia<br>Producer &amp;<br>AI Artist</h2>
+      <div class="section-header reveal">
+        <p class="section-label">Kĩ năng chính</p>
+        <h2 class="section-heading">What I Do</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal" style="--i:0">
+          <div class="skill-card-img">
+            <img src="assets/images/skills/skill-photography.png" alt="Photography" loading="lazy">
+          </div>
+          <div class="skill-card-body">
+            <h3>Photography</h3>
+            <p>Chụp ảnh sản phẩm, nhà cửa từ điện thoại đến máy ảnh chuyên nghiệp. Nắm vững ánh sáng, bố cục và kỹ thuật studio.</p>
+          </div>
         </div>
-        <div class="about-right">
-          <div class="about-bio reveal">
-            <p>Sinh viên ngành Truyền thông số và Kỹ thuật đa phương tiện tại Đại học Bách Khoa Hà Nội (khóa đầu tiên). Đam mê sản xuất nội dung đa phương tiện, AI-generated art, và phát triển các sản phẩm truyền thông sáng tạo.</p>
-            <p>Kinh nghiệm sử dụng AI tools để tạo ra hình ảnh chất lượng cao phục vụ mục đích thương mại và nghệ thuật — từ product photography, portrait, đến kiến trúc và food styling.</p>
+        <div class="skill-card reveal" style="--i:1">
+          <div class="skill-card-img">
+            <img src="assets/images/skills/skill-video.png" alt="Video Production" loading="lazy">
           </div>
-          <div class="skills-block reveal">
-            <h3 class="skills-title">Skills</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">AI Image Generation</span>
-              <span class="skill-tag">Video Editing</span>
-              <span class="skill-tag">Camera Operator</span>
-              <span class="skill-tag">Post-Production</span>
-              <span class="skill-tag">Livestream Tech</span>
-              <span class="skill-tag">Product Photography</span>
-            </div>
+          <div class="skill-card-body">
+            <h3>Video Production</h3>
+            <p>Quay video chuyên nghiệp, sử dụng Gimbal, thiết bị chuyên dụng. Edit video qua DaVinci Resolve với đầy đủ pipeline.</p>
           </div>
-          <div class="stats-row reveal">
-            <div class="stat">
-              <span class="stat-num">64+</span>
-              <span class="stat-label">AI Artworks</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">2026</span>
-              <span class="stat-label">Tốt nghiệp (dự kiến)</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">HUST</span>
-              <span class="stat-label">Bách Khoa Hà Nội</span>
-            </div>
+        </div>
+        <div class="skill-card reveal" style="--i:2">
+          <div class="skill-card-img">
+            <img src="assets/images/skills/skill-drone.png" alt="Drone & Aerial" loading="lazy">
+          </div>
+          <div class="skill-card-body">
+            <h3>Drone &amp; Aerial</h3>
+            <p>Sử dụng Drone, Fly cam để quay phim aerial. Kinh nghiệm bay và quay cảnh từ trên cao cho bất động sản, sự kiện.</p>
+          </div>
+        </div>
+        <div class="skill-card reveal" style="--i:3">
+          <div class="skill-card-img">
+            <img src="assets/images/skills/skill-ai.png" alt="AI Art Generation" loading="lazy">
+          </div>
+          <div class="skill-card-body">
+            <h3>AI Art Generation</h3>
+            <p>Sử dụng AI tools tạo hình ảnh chất lượng cao — product photography, portrait, kiến trúc và food styling.</p>
+          </div>
+        </div>
+        <div class="skill-card reveal" style="--i:4">
+          <div class="skill-card-img">
+            <img src="assets/images/workflow/workflow-5-color.png" alt="Color Grading" loading="lazy">
+          </div>
+          <div class="skill-card-body">
+            <h3>Color Grading</h3>
+            <p>Chỉnh màu chuyên nghiệp cho video RAW/LOG. Color Correction và Color Grading trên DaVinci Resolve.</p>
+          </div>
+        </div>
+        <div class="skill-card reveal" style="--i:5">
+          <div class="skill-card-img">
+            <img src="assets/images/workflow/workflow-6-audio.png" alt="Audio Production" loading="lazy">
+          </div>
+          <div class="skill-card-body">
+            <h3>Audio Production</h3>
+            <p>Lồng ghép SFX, tune âm thanh Background music và Voice. Fairlight Audio trên DaVinci Resolve.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ═══════ GALLERY ═══════ -->
   <section class="gallery" id="gallery">
     <div class="container">
       <div class="gallery-header reveal">
@@ -106,10 +138,18 @@
         </div>
         <p class="gallery-count" id="galleryCount"></p>
       </div>
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-btn active" data-filter="all">Tất cả</button>
+        <button class="filter-btn" data-filter="product">Product / TVC</button>
+        <button class="filter-btn" data-filter="realestate">Real Estate</button>
+        <button class="filter-btn" data-filter="infographic">Infographic</button>
+        <button class="filter-btn" data-filter="other">Other</button>
+      </div>
       <div class="gallery-grid" id="galleryGrid"></div>
     </div>
   </section>
 
+  <!-- ═══════ LIGHTBOX ═══════ -->
   <div class="lightbox" id="lightbox">
     <button class="lb-close" id="lbClose" aria-label="Close">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -126,6 +166,170 @@
     <div class="lb-counter" id="lbCounter"></div>
   </div>
 
+  <!-- ═══════ WORKFLOW ═══════ -->
+  <section class="workflow" id="workflow">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Quy trình</p>
+        <h2 class="section-heading">Video Editing<br>Workflow</h2>
+        <p class="section-sub">DaVinci Resolve Pipeline</p>
+      </div>
+      <div class="workflow-timeline">
+        <div class="wf-step reveal" style="--i:0">
+          <div class="wf-step-img">
+            <img src="assets/images/workflow/workflow-1-media.png" alt="Media Management" loading="lazy">
+          </div>
+          <div class="wf-step-content">
+            <span class="wf-step-num">01</span>
+            <h3>Media Management</h3>
+            <p>Quản lí Media, import footage, tổ chức project và bins. Sắp xếp tài nguyên khoa học cho workflow hiệu quả.</p>
+          </div>
+        </div>
+        <div class="wf-step reveal" style="--i:1">
+          <div class="wf-step-img">
+            <img src="assets/images/workflow/workflow-2-edit.png" alt="Basic Edit" loading="lazy">
+          </div>
+          <div class="wf-step-content">
+            <span class="wf-step-num">02</span>
+            <h3>Basic Edit</h3>
+            <p>Cắt ghép cơ bản, sắp xếp timeline, sync audio. Xây dựng rough cut và structure cho toàn bộ project.</p>
+          </div>
+        </div>
+        <div class="wf-step reveal" style="--i:2">
+          <div class="wf-step-img">
+            <img src="assets/images/workflow/workflow-3-vfx.png" alt="Transitions & VFX" loading="lazy">
+          </div>
+          <div class="wf-step-content">
+            <span class="wf-step-num">03</span>
+            <h3>Transitions &amp; VFX</h3>
+            <p>Edit chi tiết, thêm Transitions, Text for voice, các VFX cơ bản đã tạo sẵn để nâng cao chất lượng visual.</p>
+          </div>
+        </div>
+        <div class="wf-step reveal" style="--i:3">
+          <div class="wf-step-img">
+            <img src="assets/images/workflow/workflow-4-fusion.png" alt="Fusion Compositing" loading="lazy">
+          </div>
+          <div class="wf-step-content">
+            <span class="wf-step-num">04</span>
+            <h3>Fusion Compositing</h3>
+            <p>Custom compositing bằng Fusion tùy project — masking, tracking, green screen keying và node-based VFX.</p>
+          </div>
+        </div>
+        <div class="wf-step reveal" style="--i:4">
+          <div class="wf-step-img">
+            <img src="assets/images/workflow/workflow-5-color.png" alt="Color Grading" loading="lazy">
+          </div>
+          <div class="wf-step-content">
+            <span class="wf-step-num">05</span>
+            <h3>Color Correction &amp; Grading</h3>
+            <p>Color Correction chuẩn hóa màu sắc, sau đó Color Grading tạo mood và look cinematic cho video.</p>
+          </div>
+        </div>
+        <div class="wf-step reveal" style="--i:5">
+          <div class="wf-step-img">
+            <img src="assets/images/workflow/workflow-6-audio.png" alt="Audio Tune" loading="lazy">
+          </div>
+          <div class="wf-step-content">
+            <span class="wf-step-num">06</span>
+            <h3>Fairlight Audio</h3>
+            <p>Tune âm thanh, lồng ghép SFX, mix background music và voice. Đảm bảo audio chất lượng broadcast.</p>
+          </div>
+        </div>
+        <div class="wf-step reveal" style="--i:6">
+          <div class="wf-step-img">
+            <img src="assets/images/workflow/workflow-7-delivery.png" alt="Delivery" loading="lazy">
+          </div>
+          <div class="wf-step-content">
+            <span class="wf-step-num">07</span>
+            <h3>Package &amp; Delivery</h3>
+            <p>Render và export với codec phù hợp. Deliver sản phẩm cuối cùng theo đúng spec của platform và client.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ADDITIONAL SKILLS ═══════ -->
+  <section class="extra-skills" id="extraSkills">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Kĩ năng phụ</p>
+        <h2 class="section-heading">Also Skilled In</h2>
+      </div>
+      <div class="extra-grid">
+        <div class="extra-card reveal" style="--i:0">
+          <div class="extra-card-img">
+            <img src="assets/images/skills/skill-web.png" alt="Web Development" loading="lazy">
+          </div>
+          <div class="extra-card-overlay">
+            <h3>Web Development</h3>
+            <p>Thiết kế và xây dựng website, portfolio, landing page với HTML/CSS/JS.</p>
+          </div>
+        </div>
+        <div class="extra-card reveal" style="--i:1">
+          <div class="extra-card-img">
+            <img src="assets/images/skills/skill-houdini.png" alt="VFX Houdini" loading="lazy">
+          </div>
+          <div class="extra-card-overlay">
+            <h3>VFX — Houdini</h3>
+            <p>Tạo hiệu ứng particle, fluid simulation và procedural VFX bằng Houdini.</p>
+          </div>
+        </div>
+        <div class="extra-card reveal" style="--i:2">
+          <div class="extra-card-img">
+            <img src="assets/images/skills/skill-unreal.png" alt="Unreal Engine" loading="lazy">
+          </div>
+          <div class="extra-card-overlay">
+            <h3>Unreal Engine</h3>
+            <p>Virtual Production, Performance Capture và real-time rendering với Unreal Engine.</p>
+          </div>
+        </div>
+        <div class="extra-card reveal" style="--i:3">
+          <div class="extra-card-img">
+            <img src="assets/images/skills/skill-ai.png" alt="AI Concept" loading="lazy">
+          </div>
+          <div class="extra-card-overlay">
+            <h3>AI Infographic &amp; Concept</h3>
+            <p>Tạo Infographic, ảnh Concept product bằng AI tools cho marketing và presentation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ABOUT ═══════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <p class="section-label">About</p>
+          <h2 class="section-heading">Multimedia<br>Producer &amp;<br>AI Artist</h2>
+        </div>
+        <div class="about-right">
+          <div class="about-bio reveal">
+            <p>Sinh viên ngành Truyền thông số và Kỹ thuật đa phương tiện tại Đại học Bách Khoa Hà Nội (khóa đầu tiên). Đam mê sản xuất nội dung đa phương tiện, AI-generated art, và phát triển các sản phẩm truyền thông sáng tạo.</p>
+            <p>Kinh nghiệm sử dụng AI tools để tạo ra hình ảnh chất lượng cao phục vụ mục đích thương mại và nghệ thuật — từ product photography, portrait, đến kiến trúc và food styling. Thành thạo DaVinci Resolve full pipeline từ edit đến delivery.</p>
+          </div>
+          <div class="stats-row reveal">
+            <div class="stat">
+              <span class="stat-num counter" data-target="64">0</span>
+              <span class="stat-label">AI Artworks</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">2026</span>
+              <span class="stat-label">Tốt nghiệp (dự kiến)</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">HUST</span>
+              <span class="stat-label">Bách Khoa Hà Nội</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER / CONTACT ═══════ -->
   <footer class="footer" id="contact">
     <div class="container">
       <div class="footer-top reveal">
@@ -153,172 +357,6 @@
     </div>
   </footer>
 
-<script>
-const BASE = 'assets/AI%20Images/';
-const jpgs = [];
-for (let i = 1; i <= 54; i++) jpgs.push(`${BASE}1%20(${i}).jpg`);
-const pngs = [
-  `${BASE}Gemini_Generated_Image_sra44sra44sra44s.png`,
-  `${BASE}Gemini_Generated_Image_bri6n4bri6n4bri6.png`,
-  `${BASE}media-203656f859f34f1e.png`,
-  `${BASE}media-c2b2608c6e29154d.png`,
-  `${BASE}image_63c0025388e12bea.png`,
-  `${BASE}ChatGPT%20Image%20Feb%2026%2C%202026%2C%2009_38_32%20PM.png`,
-  `${BASE}ChatGPT%20Image%20Feb%2026%2C%202026%2C%2004_19_28%20PM.png`,
-  `${BASE}2312141.png`,
-  `${BASE}1421421.png`,
-  `${BASE}PuddingPreFinal.png`,
-];
-const ALL = [...jpgs, ...pngs];
-
-function thumb(fullUrl) {
-  return fullUrl.replace('AI%20Images/', 'AI%20Images/thumbs/').replace(/\.png$/, '.jpg');
-}
-
-function img(src, lazy) {
-  const el = document.createElement('img');
-  el.src = src;
-  el.alt = 'AI Art';
-  el.decoding = 'async';
-  if (lazy) el.loading = 'lazy';
-  return el;
-}
-
-/* ── Hero columns ── */
-(function buildHero() {
-  const bg = document.getElementById('heroBg');
-  const cols = [
-    { imgs: [0,10,20,30,40,50], dur: 25, dir: 'up' },
-    { imgs: [1,11,21,31,41,51], dur: 32, dir: 'down' },
-    { imgs: [2,12,22,32,42,52], dur: 22, dir: 'up' },
-    { imgs: [3,13,23,33,43,53], dur: 28, dir: 'down' },
-    { imgs: [4,14,24,34,44,54], dur: 26, dir: 'up' },
-    { imgs: [5,15,25,35,45,55], dur: 30, dir: 'down' },
-  ];
-  cols.forEach(c => {
-    const col = document.createElement('div');
-    col.className = `hero-col hero-col--${c.dir}`;
-    col.style.setProperty('--dur', c.dur + 's');
-    const srcs = c.imgs.map(i => thumb(ALL[i % ALL.length]));
-    [...srcs, ...srcs].forEach(s => col.appendChild(img(s, false)));
-    bg.appendChild(col);
-  });
-})();
-
-/* ── Marquee rows ── */
-(function buildMarquee() {
-  const rows = [
-    { id: 'marquee1', start: 26, count: 10 },
-    { id: 'marquee2', start: 36, count: 10 },
-    { id: 'marquee3', start: 46, count: 10 },
-  ];
-  rows.forEach(r => {
-    const el = document.getElementById(r.id);
-    const inner = document.createElement('div');
-    inner.className = 'marquee-inner';
-    const srcs = [];
-    for (let i = 0; i < r.count; i++) srcs.push(thumb(ALL[(r.start + i) % ALL.length]));
-    [...srcs, ...srcs].forEach(s => {
-      const wrap = document.createElement('div');
-      wrap.className = 'marquee-img';
-      wrap.appendChild(img(s, true));
-      inner.appendChild(wrap);
-    });
-    el.appendChild(inner);
-  });
-})();
-
-/* ── Gallery grid ── */
-let currentLb = 0;
-(function buildGallery() {
-  const grid = document.getElementById('galleryGrid');
-  const count = document.getElementById('galleryCount');
-  count.textContent = ALL.length + ' artworks';
-  ALL.forEach((src, i) => {
-    const item = document.createElement('div');
-    item.className = 'gallery-item reveal';
-    const image = img(thumb(src), true);
-    item.appendChild(image);
-    item.addEventListener('click', () => openLightbox(i));
-    grid.appendChild(item);
-  });
-})();
-
-/* ── Lightbox ── */
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lbImg');
-const lbCounter = document.getElementById('lbCounter');
-
-function openLightbox(i) {
-  currentLb = i;
-  lb.classList.add('active', 'lb-loading');
-  lbImg.onload = () => lb.classList.remove('lb-loading');
-  lbImg.src = ALL[i];
-  lbCounter.textContent = `${i + 1} / ${ALL.length}`;
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  lb.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-function lbNavigate(dir) {
-  currentLb = (currentLb + dir + ALL.length) % ALL.length;
-  lb.classList.add('lb-loading');
-  lbImg.onload = () => lb.classList.remove('lb-loading');
-  lbImg.src = ALL[currentLb];
-  lbCounter.textContent = `${currentLb + 1} / ${ALL.length}`;
-}
-
-document.getElementById('lbClose').addEventListener('click', closeLightbox);
-document.getElementById('lbPrev').addEventListener('click', () => lbNavigate(-1));
-document.getElementById('lbNext').addEventListener('click', () => lbNavigate(1));
-lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lb-img-wrap')) closeLightbox(); });
-document.addEventListener('keydown', e => {
-  if (!lb.classList.contains('active')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') lbNavigate(-1);
-  if (e.key === 'ArrowRight') lbNavigate(1);
-});
-
-/* ── Nav scroll ── */
-const nav = document.getElementById('nav');
-let lastY = 0;
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  nav.classList.toggle('nav--solid', y > 80);
-  nav.classList.toggle('nav--hidden', y > lastY && y > 400);
-  lastY = y;
-}, { passive: true });
-
-/* ── Smooth scroll ── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
-
-/* ── Scroll reveal ── */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); } });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-/* ── Hero parallax on mouse ── */
-const heroBg = document.getElementById('heroBg');
-document.getElementById('hero').addEventListener('mousemove', e => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 12;
-  const y = (e.clientY / window.innerHeight - 0.5) * 12;
-  heroBg.style.transform = `translate(${x}px, ${y}px)`;
-});
-
-/* ── Loader ── */
-setTimeout(() => document.getElementById('loader').classList.add('loaded'), 600);
-
-/* ── Year ── */
-document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+<script src="main.js"></script>
 </body>
 </html>
