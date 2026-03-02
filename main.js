@@ -202,62 +202,89 @@ document.getElementById('langToggle').addEventListener('click', () => {
 
 const ASSET_BASE = 'assets/AI%20Images/';
 
-const PRODUCT_NUMS = [1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21,22,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50];
+const IMAGE_FILES = [
+  'image_038c8c01af62255f',
+  'image_0475aab6fc8c5c41',
+  'image_05ceeebab4ecb4a2',
+  'image_05fa7f9e1ec2773e',
+  'image_06e74b88f1fe4561',
+  'image_08a658185c05d6cf',
+  'image_10_04336870cb64f306',
+  'image_1a9d6134c166c3f4',
+  'image_1f84fbb57100fd63',
+  'image_23d113a5aad79ea4',
+  'image_24fe7202bba44df7',
+  'image_266c9b39778da496',
+  'image_37c8a8111e294645',
+  'image_3baa96084e02e9ef',
+  'image_4326fa952981a5a7',
+  'image_4382b9bd37e0ecbc',
+  'image_44061b3fc9cee6f8',
+  'image_45c37fdb86acf9aa',
+  'image_486f52419ce83450',
+  'image_4c9e0505388b5691',
+  'image_644368834e433788',
+  'image_683e7056a899be7b',
+  'image_6_b41ab8d56b60406e',
+  'image_6a699026e1bd41f7',
+  'image_6b047b384d39a954',
+  'image_6d1f1d6b0eadfed7',
+  'image_72364af6b30ad2d7',
+  'image_79be7d4642dc8590',
+  'image_7_561731b2d9bbf505',
+  'image_7a91445e1dff4d31',
+  'image_7dc811a0aec09292',
+  'image_7dfec0ab81c2a2db',
+  'image_7f9f7f4df9e8df20',
+  'image_8029ef2d48a7a83e',
+  'image_850db235ff777235',
+  'image_8_ebc60d0e33be6d34',
+  'image_8f8fc17074b83653',
+  'image_9037286eb8114099',
+  'image_90832bc18796d261',
+  'image_94f99283d66b2483',
+  'image_95083082114a653b',
+  'image_9989ba3d886296b8',
+  'image_9_b3006047d566ab4f',
+  'image_9e9087ff1ad561b3',
+  'image_a40133c4b04bf32f',
+  'image_a64aeaa7f0c12efc',
+  'image_ab5fe90828c11d0e',
+  'image_b70cfa48e4980170',
+  'image_bda4bd062362a519',
+  'image_be2777810d7fd739',
+  'image_c1d5d4d09b84ee65',
+  'image_c53b8da4e04a8cef',
+  'image_c59e9ba4815daf4b',
+  'image_cc48e67de18fa4a0',
+  'image_d29087db0afc36c5',
+  'image_d31fff41b679c8a8',
+  'image_d3ba665a74a7dea2',
+  'image_d47520a126c23970',
+  'image_d774dd2bb784e133',
+  'image_dd53e55e4de608b3',
+  'image_e65740e75f025652',
+  'image_e79e7125b9aa004b',
+  'image_eeafb1884765ade6',
+  'image_f7c7f270b5c6a061',
+  'image_fbfc5127384c4937',
+];
 
-const CATEGORIES = {
-  product: {
-    label: 'Product / TVC',
-    files: PRODUCT_NUMS.map(n => ({
-      full: `${ASSET_BASE}Product/AI%20TVC%20image/1%20(${n}).jpg`,
-      thumb: `${ASSET_BASE}thumbs/1%20(${n}).jpg`
-    })).concat([
-      { full: `${ASSET_BASE}Product/AI%20TVC%20image/PuddingPreFinal.png`, thumb: `${ASSET_BASE}thumbs/PuddingPreFinal.jpg` },
-      { full: `${ASSET_BASE}Product/AI%20TVC%20image/2312141.png`, thumb: `${ASSET_BASE}thumbs/2312141.jpg` },
-      { full: `${ASSET_BASE}Product/AI%20TVC%20image/1421421.png`, thumb: `${ASSET_BASE}thumbs/1421421.jpg` },
-      { full: `${ASSET_BASE}Product/AI%20TVC%20image/image_63c0025388e12bea.png`, thumb: `${ASSET_BASE}thumbs/image_63c0025388e12bea.jpg` },
-      { full: `${ASSET_BASE}Product/AI%20TVC%20image/media-c2b2608c6e29154d.png`, thumb: `${ASSET_BASE}thumbs/media-c2b2608c6e29154d.jpg` },
-      { full: `${ASSET_BASE}Product/AI%20TVC%20image/ChatGPT%20Image%20Feb%2026%2C%202026%2C%2009_38_32%20PM.png`, thumb: `${ASSET_BASE}thumbs/ChatGPT%20Image%20Feb%2026%2C%202026%2C%2009_38_32%20PM.jpg` },
-    ])
-  },
-  realestate: {
-    label: 'Real Estate',
-    files: [
-      { full: `${ASSET_BASE}Real%20Estate/AI%20Image/Gemini_Generated_Image_sra44sra44sra44s.png`, thumb: `${ASSET_BASE}thumbs/Gemini_Generated_Image_sra44sra44sra44s.jpg` },
-      { full: `${ASSET_BASE}Real%20Estate/AI%20Image/Gemini_Generated_Image_bri6n4bri6n4bri6.png`, thumb: `${ASSET_BASE}thumbs/Gemini_Generated_Image_bri6n4bri6n4bri6.jpg` },
-      { full: `${ASSET_BASE}Real%20Estate/AI%20Image/media-203656f859f34f1e.png`, thumb: `${ASSET_BASE}thumbs/media-203656f859f34f1e.jpg` },
-      { full: `${ASSET_BASE}Real%20Estate/AI%20Image/ChatGPT%20Image%20Feb%2026%2C%202026%2C%2004_19_28%20PM.png`, thumb: `${ASSET_BASE}thumbs/ChatGPT%20Image%20Feb%2026%2C%202026%2C%2004_19_28%20PM.jpg` },
-    ]
-  },
-  infographic: {
-    label: 'Infographic',
-    files: [
-      { full: `${ASSET_BASE}Product/Infographic/1%20(3).jpg`, thumb: `${ASSET_BASE}thumbs/1%20(3).jpg` },
-    ]
-  },
-  other: {
-    label: 'Other',
-    files: [
-      { full: `${ASSET_BASE}Other%20Random/1%20(18).jpg`, thumb: `${ASSET_BASE}thumbs/1%20(18).jpg` },
-      { full: `${ASSET_BASE}Other%20Random/1%20(23).jpg`, thumb: `${ASSET_BASE}thumbs/1%20(23).jpg` },
-      { full: `${ASSET_BASE}Other%20Random/1%20(51).jpg`, thumb: `${ASSET_BASE}thumbs/1%20(51).jpg` },
-      { full: `${ASSET_BASE}Other%20Random/1%20(52).jpg`, thumb: `${ASSET_BASE}thumbs/1%20(52).jpg` },
-      { full: `${ASSET_BASE}Other%20Random/1%20(53).jpg`, thumb: `${ASSET_BASE}thumbs/1%20(53).jpg` },
-      { full: `${ASSET_BASE}Other%20Random/1%20(54).jpg`, thumb: `${ASSET_BASE}thumbs/1%20(54).jpg` },
-    ]
-  }
-};
-
-const ALL_IMAGES = [];
-Object.entries(CATEGORIES).forEach(([cat, data]) => {
-  data.files.forEach(f => ALL_IMAGES.push({ ...f, category: cat, catLabel: data.label }));
-});
+const ALL_IMAGES = IMAGE_FILES.map(name => ({
+  full:  `${ASSET_BASE}Products/${name}.png`,
+  thumb: `${ASSET_BASE}thumbs/${name}.webp`,
+  category: 'product',
+  catLabel: 'AI Product',
+}));
 
 function createImg(src, lazy) {
   const el = document.createElement('img');
+  if (lazy) {
+    el.loading = 'lazy';
+    el.decoding = 'async';
+  }
   el.src = src;
   el.alt = 'AI Art';
-  el.decoding = 'async';
-  if (lazy) el.loading = 'lazy';
   return el;
 }
 
@@ -308,7 +335,6 @@ function createImg(src, lazy) {
 
 /* ═══════ Gallery ═══════ */
 let currentLb = 0;
-let visibleImages = [...ALL_IMAGES];
 
 (function buildGallery() {
   const grid = document.getElementById('galleryGrid');
@@ -319,53 +345,13 @@ let visibleImages = [...ALL_IMAGES];
   ALL_IMAGES.forEach((img, i) => {
     const item = document.createElement('div');
     item.className = 'gallery-item reveal';
-    item.dataset.category = img.category;
     item.dataset.index = i;
 
     const image = createImg(img.thumb, true);
     item.appendChild(image);
 
-    const catTag = document.createElement('span');
-    catTag.className = 'gallery-cat';
-    catTag.textContent = img.catLabel;
-    item.appendChild(catTag);
-
-    item.addEventListener('click', () => {
-      const visIdx = visibleImages.indexOf(img);
-      openLightbox(visIdx >= 0 ? visIdx : 0);
-    });
+    item.addEventListener('click', () => openLightbox(i));
     grid.appendChild(item);
-  });
-})();
-
-/* ═══════ Gallery Filters ═══════ */
-(function initFilters() {
-  const btns = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.gallery-item');
-  const count = document.getElementById('galleryCount');
-
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-      btns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      if (filter === 'all') {
-        visibleImages = [...ALL_IMAGES];
-      } else {
-        visibleImages = ALL_IMAGES.filter(img => img.category === filter);
-      }
-
-      items.forEach(item => {
-        if (filter === 'all' || item.dataset.category === filter) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-
-      count.textContent = visibleImages.length + ' ' + T[currentLang]['gallery.unit'];
-    });
   });
 })();
 
@@ -378,22 +364,23 @@ function openLightbox(i) {
   currentLb = i;
   lb.classList.add('active', 'lb-loading');
   lbImg.onload = () => lb.classList.remove('lb-loading');
-  lbImg.src = visibleImages[i].full;
-  lbCounter.textContent = `${i + 1} / ${visibleImages.length}`;
+  lbImg.src = ALL_IMAGES[i].full;
+  lbCounter.textContent = `${i + 1} / ${ALL_IMAGES.length}`;
   document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
   lb.classList.remove('active');
+  lbImg.src = '';
   document.body.style.overflow = '';
 }
 
 function lbNavigate(dir) {
-  currentLb = (currentLb + dir + visibleImages.length) % visibleImages.length;
+  currentLb = (currentLb + dir + ALL_IMAGES.length) % ALL_IMAGES.length;
   lb.classList.add('lb-loading');
   lbImg.onload = () => lb.classList.remove('lb-loading');
-  lbImg.src = visibleImages[currentLb].full;
-  lbCounter.textContent = `${currentLb + 1} / ${visibleImages.length}`;
+  lbImg.src = ALL_IMAGES[currentLb].full;
+  lbCounter.textContent = `${currentLb + 1} / ${ALL_IMAGES.length}`;
 }
 
 document.getElementById('lbClose').addEventListener('click', closeLightbox);
