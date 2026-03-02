@@ -22,15 +22,22 @@
   <!-- ═══════ NAV ═══════ -->
   <nav class="nav" id="nav">
     <a href="#" class="nav-logo">DH<span class="nav-logo-dot">.</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="#skills">Skills</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-right">
+      <div class="nav-links" id="navLinks">
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#workflow" data-i18n="nav.workflow">Workflow</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-opt" data-lang="vi">VI</span>
+        <span class="lang-opt" data-lang="en">EN</span>
+        <span class="lang-slider"></span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -39,19 +46,19 @@
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tag">Multimedia Producer</p>
+      <p class="hero-tag" data-i18n="hero.tag">Multimedia Producer</p>
       <h1 class="hero-title">Nguyễn<br>Danh Huy</h1>
-      <p class="hero-sub">Video Production &bull; AI Art &bull; Post-Production</p>
+      <p class="hero-sub" data-i18n="hero.sub">Video Production &bull; AI Art &bull; Post-Production</p>
       <div class="hero-actions">
         <a href="#gallery" class="btn-primary">
-          <span>Xem Gallery</span>
+          <span data-i18n="hero.cta">Xem Gallery</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
-        <a href="#about" class="btn-outline">Về tôi</a>
+        <a href="#about" class="btn-outline" data-i18n="hero.cta2">Về tôi</a>
       </div>
     </div>
     <div class="scroll-hint">
-      <span>Scroll</span>
+      <span data-i18n="hero.scroll">Scroll</span>
       <div class="scroll-line"></div>
     </div>
   </section>
@@ -66,8 +73,8 @@
   <section class="skills" id="skills">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-label">Kĩ năng chính</p>
-        <h2 class="section-heading">What I Do</h2>
+        <p class="section-label" data-i18n="skills.label">Kĩ năng chính</p>
+        <h2 class="section-heading" data-i18n="skills.heading">What I Do</h2>
       </div>
       <div class="skills-grid">
         <div class="skill-card reveal" style="--i:0">
@@ -75,8 +82,8 @@
             <img src="assets/images/skills/skill-photography.png" alt="Photography" loading="lazy">
           </div>
           <div class="skill-card-body">
-            <h3>Photography</h3>
-            <p>Chụp ảnh sản phẩm, nhà cửa từ điện thoại đến máy ảnh chuyên nghiệp. Nắm vững ánh sáng, bố cục và kỹ thuật studio.</p>
+            <h3 data-i18n="skill.photo.t">Photography</h3>
+            <p data-i18n="skill.photo.d">Chụp ảnh sản phẩm, nhà cửa từ điện thoại đến máy ảnh chuyên nghiệp. Nắm vững ánh sáng, bố cục và kỹ thuật studio.</p>
           </div>
         </div>
         <div class="skill-card reveal" style="--i:1">
@@ -84,8 +91,8 @@
             <img src="assets/images/skills/skill-video.png" alt="Video Production" loading="lazy">
           </div>
           <div class="skill-card-body">
-            <h3>Video Production</h3>
-            <p>Quay video chuyên nghiệp, sử dụng Gimbal, thiết bị chuyên dụng. Edit video qua DaVinci Resolve với đầy đủ pipeline.</p>
+            <h3 data-i18n="skill.video.t">Video Production</h3>
+            <p data-i18n="skill.video.d">Quay video chuyên nghiệp, sử dụng Gimbal, thiết bị chuyên dụng. Edit video qua DaVinci Resolve với đầy đủ pipeline.</p>
           </div>
         </div>
         <div class="skill-card reveal" style="--i:2">
@@ -93,8 +100,8 @@
             <img src="assets/images/skills/skill-drone.png" alt="Drone & Aerial" loading="lazy">
           </div>
           <div class="skill-card-body">
-            <h3>Drone &amp; Aerial</h3>
-            <p>Sử dụng Drone, Fly cam để quay phim aerial. Kinh nghiệm bay và quay cảnh từ trên cao cho bất động sản, sự kiện.</p>
+            <h3 data-i18n="skill.drone.t">Drone &amp; Aerial</h3>
+            <p data-i18n="skill.drone.d">Sử dụng Drone, Fly cam để quay phim aerial. Kinh nghiệm bay và quay cảnh từ trên cao cho bất động sản, sự kiện.</p>
           </div>
         </div>
         <div class="skill-card reveal" style="--i:3">
@@ -102,8 +109,8 @@
             <img src="assets/images/skills/skill-ai.png" alt="AI Art Generation" loading="lazy">
           </div>
           <div class="skill-card-body">
-            <h3>AI Art Generation</h3>
-            <p>Sử dụng AI tools tạo hình ảnh chất lượng cao — product photography, portrait, kiến trúc và food styling.</p>
+            <h3 data-i18n="skill.ai.t">AI Art Generation</h3>
+            <p data-i18n="skill.ai.d">Sử dụng AI tools tạo hình ảnh chất lượng cao — product photography, portrait, kiến trúc và food styling.</p>
           </div>
         </div>
         <div class="skill-card reveal" style="--i:4">
@@ -111,8 +118,8 @@
             <img src="assets/images/workflow/workflow-5-color.png" alt="Color Grading" loading="lazy">
           </div>
           <div class="skill-card-body">
-            <h3>Color Grading</h3>
-            <p>Chỉnh màu chuyên nghiệp cho video RAW/LOG. Color Correction và Color Grading trên DaVinci Resolve.</p>
+            <h3 data-i18n="skill.color.t">Color Grading</h3>
+            <p data-i18n="skill.color.d">Chỉnh màu chuyên nghiệp cho video RAW/LOG. Color Correction và Color Grading trên DaVinci Resolve.</p>
           </div>
         </div>
         <div class="skill-card reveal" style="--i:5">
@@ -120,8 +127,8 @@
             <img src="assets/images/workflow/workflow-6-audio.png" alt="Audio Production" loading="lazy">
           </div>
           <div class="skill-card-body">
-            <h3>Audio Production</h3>
-            <p>Lồng ghép SFX, tune âm thanh Background music và Voice. Fairlight Audio trên DaVinci Resolve.</p>
+            <h3 data-i18n="skill.audio.t">Audio Production</h3>
+            <p data-i18n="skill.audio.d">Lồng ghép SFX, tune âm thanh Background music và Voice. Fairlight Audio trên DaVinci Resolve.</p>
           </div>
         </div>
       </div>
@@ -133,13 +140,13 @@
     <div class="container">
       <div class="gallery-header reveal">
         <div>
-          <p class="section-label">Gallery</p>
-          <h2 class="section-heading">AI Generated<br>Artworks</h2>
+          <p class="section-label" data-i18n="gallery.label">Gallery</p>
+          <h2 class="section-heading" data-i18n-html="gallery.heading">AI Generated<br>Artworks</h2>
         </div>
         <p class="gallery-count" id="galleryCount"></p>
       </div>
       <div class="gallery-filters" id="galleryFilters">
-        <button class="filter-btn active" data-filter="all">Tất cả</button>
+        <button class="filter-btn active" data-filter="all" data-i18n="gallery.all">Tất cả</button>
         <button class="filter-btn" data-filter="product">Product / TVC</button>
         <button class="filter-btn" data-filter="realestate">Real Estate</button>
         <button class="filter-btn" data-filter="infographic">Infographic</button>
@@ -170,9 +177,9 @@
   <section class="workflow" id="workflow">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-label">Quy trình</p>
-        <h2 class="section-heading">Video Editing<br>Workflow</h2>
-        <p class="section-sub">DaVinci Resolve Pipeline</p>
+        <p class="section-label" data-i18n="wf.label">Quy trình</p>
+        <h2 class="section-heading" data-i18n-html="wf.heading">Video Editing<br>Workflow</h2>
+        <p class="section-sub" data-i18n="wf.sub">DaVinci Resolve Pipeline</p>
       </div>
       <div class="workflow-timeline">
         <div class="wf-step reveal" style="--i:0">
@@ -181,8 +188,8 @@
           </div>
           <div class="wf-step-content">
             <span class="wf-step-num">01</span>
-            <h3>Media Management</h3>
-            <p>Quản lí Media, import footage, tổ chức project và bins. Sắp xếp tài nguyên khoa học cho workflow hiệu quả.</p>
+            <h3 data-i18n="wf1.t">Media Management</h3>
+            <p data-i18n="wf1.d">Quản lí Media, import footage, tổ chức project và bins. Sắp xếp tài nguyên khoa học cho workflow hiệu quả.</p>
           </div>
         </div>
         <div class="wf-step reveal" style="--i:1">
@@ -191,8 +198,8 @@
           </div>
           <div class="wf-step-content">
             <span class="wf-step-num">02</span>
-            <h3>Basic Edit</h3>
-            <p>Cắt ghép cơ bản, sắp xếp timeline, sync audio. Xây dựng rough cut và structure cho toàn bộ project.</p>
+            <h3 data-i18n="wf2.t">Basic Edit</h3>
+            <p data-i18n="wf2.d">Cắt ghép cơ bản, sắp xếp timeline, sync audio. Xây dựng rough cut và structure cho toàn bộ project.</p>
           </div>
         </div>
         <div class="wf-step reveal" style="--i:2">
@@ -201,8 +208,8 @@
           </div>
           <div class="wf-step-content">
             <span class="wf-step-num">03</span>
-            <h3>Transitions &amp; VFX</h3>
-            <p>Edit chi tiết, thêm Transitions, Text for voice, các VFX cơ bản đã tạo sẵn để nâng cao chất lượng visual.</p>
+            <h3 data-i18n="wf3.t">Transitions &amp; VFX</h3>
+            <p data-i18n="wf3.d">Edit chi tiết, thêm Transitions, Text for voice, các VFX cơ bản đã tạo sẵn để nâng cao chất lượng visual.</p>
           </div>
         </div>
         <div class="wf-step reveal" style="--i:3">
@@ -211,8 +218,8 @@
           </div>
           <div class="wf-step-content">
             <span class="wf-step-num">04</span>
-            <h3>Fusion Compositing</h3>
-            <p>Custom compositing bằng Fusion tùy project — masking, tracking, green screen keying và node-based VFX.</p>
+            <h3 data-i18n="wf4.t">Fusion Compositing</h3>
+            <p data-i18n="wf4.d">Custom compositing bằng Fusion tùy project — masking, tracking, green screen keying và node-based VFX.</p>
           </div>
         </div>
         <div class="wf-step reveal" style="--i:4">
@@ -221,8 +228,8 @@
           </div>
           <div class="wf-step-content">
             <span class="wf-step-num">05</span>
-            <h3>Color Correction &amp; Grading</h3>
-            <p>Color Correction chuẩn hóa màu sắc, sau đó Color Grading tạo mood và look cinematic cho video.</p>
+            <h3 data-i18n="wf5.t">Color Correction &amp; Grading</h3>
+            <p data-i18n="wf5.d">Color Correction chuẩn hóa màu sắc, sau đó Color Grading tạo mood và look cinematic cho video.</p>
           </div>
         </div>
         <div class="wf-step reveal" style="--i:5">
@@ -231,8 +238,8 @@
           </div>
           <div class="wf-step-content">
             <span class="wf-step-num">06</span>
-            <h3>Fairlight Audio</h3>
-            <p>Tune âm thanh, lồng ghép SFX, mix background music và voice. Đảm bảo audio chất lượng broadcast.</p>
+            <h3 data-i18n="wf6.t">Fairlight Audio</h3>
+            <p data-i18n="wf6.d">Tune âm thanh, lồng ghép SFX, mix background music và voice. Đảm bảo audio chất lượng broadcast.</p>
           </div>
         </div>
         <div class="wf-step reveal" style="--i:6">
@@ -241,8 +248,8 @@
           </div>
           <div class="wf-step-content">
             <span class="wf-step-num">07</span>
-            <h3>Package &amp; Delivery</h3>
-            <p>Render và export với codec phù hợp. Deliver sản phẩm cuối cùng theo đúng spec của platform và client.</p>
+            <h3 data-i18n="wf7.t">Package &amp; Delivery</h3>
+            <p data-i18n="wf7.d">Render và export với codec phù hợp. Deliver sản phẩm cuối cùng theo đúng spec của platform và client.</p>
           </div>
         </div>
       </div>
@@ -253,8 +260,8 @@
   <section class="extra-skills" id="extraSkills">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-label">Kĩ năng phụ</p>
-        <h2 class="section-heading">Also Skilled In</h2>
+        <p class="section-label" data-i18n="extra.label">Kĩ năng phụ</p>
+        <h2 class="section-heading" data-i18n="extra.heading">Also Skilled In</h2>
       </div>
       <div class="extra-grid">
         <div class="extra-card reveal" style="--i:0">
@@ -262,8 +269,8 @@
             <img src="assets/images/skills/skill-web.png" alt="Web Development" loading="lazy">
           </div>
           <div class="extra-card-overlay">
-            <h3>Web Development</h3>
-            <p>Thiết kế và xây dựng website, portfolio, landing page với HTML/CSS/JS.</p>
+            <h3 data-i18n="extra.web.t">Web Development</h3>
+            <p data-i18n="extra.web.d">Thiết kế và xây dựng website, portfolio, landing page với HTML/CSS/JS.</p>
           </div>
         </div>
         <div class="extra-card reveal" style="--i:1">
@@ -271,8 +278,8 @@
             <img src="assets/images/skills/skill-houdini.png" alt="VFX Houdini" loading="lazy">
           </div>
           <div class="extra-card-overlay">
-            <h3>VFX — Houdini</h3>
-            <p>Tạo hiệu ứng particle, fluid simulation và procedural VFX bằng Houdini.</p>
+            <h3 data-i18n="extra.houdini.t">VFX — Houdini</h3>
+            <p data-i18n="extra.houdini.d">Tạo hiệu ứng particle, fluid simulation và procedural VFX bằng Houdini.</p>
           </div>
         </div>
         <div class="extra-card reveal" style="--i:2">
@@ -280,8 +287,8 @@
             <img src="assets/images/skills/skill-unreal.png" alt="Unreal Engine" loading="lazy">
           </div>
           <div class="extra-card-overlay">
-            <h3>Unreal Engine</h3>
-            <p>Virtual Production, Performance Capture và real-time rendering với Unreal Engine.</p>
+            <h3 data-i18n="extra.unreal.t">Unreal Engine</h3>
+            <p data-i18n="extra.unreal.d">Virtual Production, Performance Capture và real-time rendering với Unreal Engine.</p>
           </div>
         </div>
         <div class="extra-card reveal" style="--i:3">
@@ -289,8 +296,8 @@
             <img src="assets/images/skills/skill-ai.png" alt="AI Concept" loading="lazy">
           </div>
           <div class="extra-card-overlay">
-            <h3>AI Infographic &amp; Concept</h3>
-            <p>Tạo Infographic, ảnh Concept product bằng AI tools cho marketing và presentation.</p>
+            <h3 data-i18n="extra.ai.t">AI Infographic &amp; Concept</h3>
+            <p data-i18n="extra.ai.d">Tạo Infographic, ảnh Concept product bằng AI tools cho marketing và presentation.</p>
           </div>
         </div>
       </div>
@@ -302,26 +309,26 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-left reveal">
-          <p class="section-label">About</p>
-          <h2 class="section-heading">Multimedia<br>Producer &amp;<br>AI Artist</h2>
+          <p class="section-label" data-i18n="about.label">About</p>
+          <h2 class="section-heading" data-i18n-html="about.heading">Multimedia<br>Producer &amp;<br>AI Artist</h2>
         </div>
         <div class="about-right">
           <div class="about-bio reveal">
-            <p>Sinh viên ngành Truyền thông số và Kỹ thuật đa phương tiện tại Đại học Bách Khoa Hà Nội (khóa đầu tiên). Đam mê sản xuất nội dung đa phương tiện, AI-generated art, và phát triển các sản phẩm truyền thông sáng tạo.</p>
-            <p>Kinh nghiệm sử dụng AI tools để tạo ra hình ảnh chất lượng cao phục vụ mục đích thương mại và nghệ thuật — từ product photography, portrait, đến kiến trúc và food styling. Thành thạo DaVinci Resolve full pipeline từ edit đến delivery.</p>
+            <p data-i18n="about.bio1">Sinh viên ngành Truyền thông số và Kỹ thuật đa phương tiện tại Đại học Bách Khoa Hà Nội (khóa đầu tiên). Đam mê sản xuất nội dung đa phương tiện, AI-generated art, và phát triển các sản phẩm truyền thông sáng tạo.</p>
+            <p data-i18n="about.bio2">Kinh nghiệm sử dụng AI tools để tạo ra hình ảnh chất lượng cao phục vụ mục đích thương mại và nghệ thuật — từ product photography, portrait, đến kiến trúc và food styling. Thành thạo DaVinci Resolve full pipeline từ edit đến delivery.</p>
           </div>
           <div class="stats-row reveal">
             <div class="stat">
               <span class="stat-num counter" data-target="64">0</span>
-              <span class="stat-label">AI Artworks</span>
+              <span class="stat-label" data-i18n="stat.artworks">AI Artworks</span>
             </div>
             <div class="stat">
               <span class="stat-num">2026</span>
-              <span class="stat-label">Tốt nghiệp (dự kiến)</span>
+              <span class="stat-label" data-i18n="stat.grad">Tốt nghiệp (dự kiến)</span>
             </div>
             <div class="stat">
               <span class="stat-num">HUST</span>
-              <span class="stat-label">Bách Khoa Hà Nội</span>
+              <span class="stat-label" data-i18n="stat.school">Bách Khoa Hà Nội</span>
             </div>
           </div>
         </div>
@@ -333,8 +340,8 @@
   <footer class="footer" id="contact">
     <div class="container">
       <div class="footer-top reveal">
-        <h2 class="footer-heading">Let's Connect</h2>
-        <p class="footer-sub">Sẵn sàng hợp tác cho các dự án sáng tạo</p>
+        <h2 class="footer-heading" data-i18n="footer.heading">Let's Connect</h2>
+        <p class="footer-sub" data-i18n="footer.sub">Sẵn sàng hợp tác cho các dự án sáng tạo</p>
       </div>
       <div class="footer-grid reveal">
         <div class="footer-col">
@@ -342,17 +349,17 @@
           <a href="mailto:danhhuyconnect@outlook.com" class="footer-link">danhhuyconnect@outlook.com</a>
         </div>
         <div class="footer-col">
-          <h4 class="footer-label">Phone</h4>
+          <h4 class="footer-label" data-i18n="footer.phone">Phone</h4>
           <a href="tel:+84973015278" class="footer-link">+84 973 015 278</a>
         </div>
         <div class="footer-col">
-          <h4 class="footer-label">Location</h4>
-          <span class="footer-link">Hà Nội, Việt Nam</span>
+          <h4 class="footer-label" data-i18n="footer.loc">Location</h4>
+          <span class="footer-link" data-i18n="footer.locVal">Hà Nội, Việt Nam</span>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="y"></span> Nguyễn Danh Huy</span>
-        <span class="footer-muted">Multimedia Producer</span>
+        <span class="footer-muted" data-i18n="footer.role">Multimedia Producer</span>
       </div>
     </div>
   </footer>
