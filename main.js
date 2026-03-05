@@ -32,10 +32,11 @@ const T = {
     'skill.color.t': 'Chỉnh màu',
     'skill.color.d': 'Chỉnh màu chuyên nghiệp cho video RAW/LOG. Color Correction và Color Grading trên DaVinci Resolve.',
 
-    'gallery.label':   'Bộ sưu tập',
-    'gallery.heading': 'Tác phẩm<br>AI Art',
-    'gallery.all':     'Tất cả',
-    'gallery.unit':    'tác phẩm',
+    'gallery.label':    'Bộ sưu tập',
+    'gallery.heading':  'Tác phẩm<br>AI Art',
+    'gallery.all':      'Tất cả',
+    'gallery.unit':     'tác phẩm',
+    'gallery.loadMore': 'Xem thêm',
 
     'videos.label':        'Tác phẩm',
     'videos.heading':      'Video của tôi',
@@ -112,10 +113,11 @@ const T = {
     'skill.color.t': 'Color Grading',
     'skill.color.d': 'Professional color grading for RAW/LOG video. Color Correction and Color Grading in DaVinci Resolve.',
 
-    'gallery.label':   'Gallery',
-    'gallery.heading': 'AI Generated<br>Artworks',
-    'gallery.all':     'All',
-    'gallery.unit':    'artworks',
+    'gallery.label':    'Gallery',
+    'gallery.heading':  'AI Generated<br>Artworks',
+    'gallery.all':      'All',
+    'gallery.unit':     'artworks',
+    'gallery.loadMore': 'Load More',
 
     'videos.label':        'My Work',
     'videos.heading':      'My Videos',
@@ -193,93 +195,132 @@ function setLang(lang) {
     ? 'Nguyễn Danh Huy | Nhà sản xuất Đa phương tiện'
     : 'Nguyễn Danh Huy | Multimedia Producer';
 
-  const countEl = document.getElementById('galleryCount');
-  if (countEl) {
-    const num = countEl.textContent.match(/\d+/);
-    if (num) countEl.textContent = num[0] + ' ' + dict['gallery.unit'];
-  }
+  updateGalleryCount();
 }
 
 document.getElementById('langToggle').addEventListener('click', () => {
   setLang(currentLang === 'vi' ? 'en' : 'vi');
 });
 
-const ASSET_BASE = 'assets/AI%20Images/';
-
-const IMAGE_FILES = [
-  'image_038c8c01af62255f',
-  'image_0475aab6fc8c5c41',
-  'image_05ceeebab4ecb4a2',
-  'image_05fa7f9e1ec2773e',
-  'image_06e74b88f1fe4561',
-  'image_08a658185c05d6cf',
-  'image_10_04336870cb64f306',
-  'image_1a9d6134c166c3f4',
-  'image_1f84fbb57100fd63',
-  'image_23d113a5aad79ea4',
-  'image_24fe7202bba44df7',
-  'image_266c9b39778da496',
-  'image_37c8a8111e294645',
-  'image_3baa96084e02e9ef',
-  'image_4326fa952981a5a7',
-  'image_4382b9bd37e0ecbc',
-  'image_44061b3fc9cee6f8',
-  'image_45c37fdb86acf9aa',
-  'image_486f52419ce83450',
-  'image_4c9e0505388b5691',
-  'image_644368834e433788',
-  'image_683e7056a899be7b',
-  'image_6_b41ab8d56b60406e',
-  'image_6a699026e1bd41f7',
-  'image_6b047b384d39a954',
-  'image_6d1f1d6b0eadfed7',
-  'image_72364af6b30ad2d7',
-  'image_79be7d4642dc8590',
-  'image_7_561731b2d9bbf505',
-  'image_7a91445e1dff4d31',
-  'image_7dc811a0aec09292',
-  'image_7dfec0ab81c2a2db',
-  'image_7f9f7f4df9e8df20',
-  'image_8029ef2d48a7a83e',
-  'image_850db235ff777235',
-  'image_8_ebc60d0e33be6d34',
-  'image_8f8fc17074b83653',
-  'image_9037286eb8114099',
-  'image_90832bc18796d261',
-  'image_94f99283d66b2483',
-  'image_95083082114a653b',
-  'image_9989ba3d886296b8',
-  'image_9_b3006047d566ab4f',
-  'image_9e9087ff1ad561b3',
-  'image_a40133c4b04bf32f',
-  'image_a64aeaa7f0c12efc',
-  'image_ab5fe90828c11d0e',
-  'image_b70cfa48e4980170',
-  'image_bda4bd062362a519',
-  'image_be2777810d7fd739',
-  'image_c1d5d4d09b84ee65',
-  'image_c53b8da4e04a8cef',
-  'image_c59e9ba4815daf4b',
-  'image_cc48e67de18fa4a0',
-  'image_d29087db0afc36c5',
-  'image_d31fff41b679c8a8',
-  'image_d3ba665a74a7dea2',
-  'image_d47520a126c23970',
-  'image_d774dd2bb784e133',
-  'image_dd53e55e4de608b3',
-  'image_e65740e75f025652',
-  'image_e79e7125b9aa004b',
-  'image_eeafb1884765ade6',
-  'image_f7c7f270b5c6a061',
-  'image_fbfc5127384c4937',
+const ALL_IMAGES = [
+  { full: 'assets/AI%20Images/Products/1%20%281%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%281%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2810%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2810%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2811%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2811%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2812%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2812%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2813%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2813%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2814%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2814%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2816%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2816%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2817%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2817%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2819%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2819%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%282%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%282%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2820%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2820%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2821%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2821%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2822%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2822%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2824%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2824%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2825%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2825%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2826%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2826%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2827%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2827%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2828%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2828%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2829%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2829%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2830%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2830%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2831%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2831%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2832%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2832%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2833%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2833%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2834%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2834%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2835%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2835%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2836%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2836%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2837%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2837%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2838%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2838%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2839%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2839%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%284%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%284%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2840%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2840%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2841%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2841%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2842%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2842%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2843%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2843%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2844%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2844%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2845%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2845%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2846%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2846%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2847%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2847%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2848%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2848%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2849%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2849%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%285%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%285%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%2850%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%2850%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%286%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%286%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%287%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%287%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%288%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%288%29.webp' },
+  { full: 'assets/AI%20Images/Products/1%20%289%29.jpg', thumb: 'assets/AI%20Images/thumbs/1%20%289%29.webp' },
+  { full: 'assets/AI%20Images/Products/1421421.png', thumb: 'assets/AI%20Images/thumbs/1421421.webp' },
+  { full: 'assets/AI%20Images/Products/2312141.png', thumb: 'assets/AI%20Images/thumbs/2312141.webp' },
+  { full: 'assets/AI%20Images/Products/ChatGPT%20Image%20Feb%2026%2C%202026%2C%2009_38_32%20PM.png', thumb: 'assets/AI%20Images/thumbs/ChatGPT%20Image%20Feb%2026%2C%202026%2C%2009_38_32%20PM.webp' },
+  { full: 'assets/AI%20Images/Products/PuddingPreFinal.png', thumb: 'assets/AI%20Images/thumbs/PuddingPreFinal.webp' },
+  { full: 'assets/AI%20Images/Products/image_038c8c01af62255f.png', thumb: 'assets/AI%20Images/thumbs/image_038c8c01af62255f.webp' },
+  { full: 'assets/AI%20Images/Products/image_0475aab6fc8c5c41.png', thumb: 'assets/AI%20Images/thumbs/image_0475aab6fc8c5c41.webp' },
+  { full: 'assets/AI%20Images/Products/image_05ceeebab4ecb4a2.png', thumb: 'assets/AI%20Images/thumbs/image_05ceeebab4ecb4a2.webp' },
+  { full: 'assets/AI%20Images/Products/image_05fa7f9e1ec2773e.png', thumb: 'assets/AI%20Images/thumbs/image_05fa7f9e1ec2773e.webp' },
+  { full: 'assets/AI%20Images/Products/image_06e74b88f1fe4561.png', thumb: 'assets/AI%20Images/thumbs/image_06e74b88f1fe4561.webp' },
+  { full: 'assets/AI%20Images/Products/image_08a658185c05d6cf.png', thumb: 'assets/AI%20Images/thumbs/image_08a658185c05d6cf.webp' },
+  { full: 'assets/AI%20Images/Products/image_10_04336870cb64f306.png', thumb: 'assets/AI%20Images/thumbs/image_10_04336870cb64f306.webp' },
+  { full: 'assets/AI%20Images/Products/image_1a9d6134c166c3f4.png', thumb: 'assets/AI%20Images/thumbs/image_1a9d6134c166c3f4.webp' },
+  { full: 'assets/AI%20Images/Products/image_1f84fbb57100fd63.png', thumb: 'assets/AI%20Images/thumbs/image_1f84fbb57100fd63.webp' },
+  { full: 'assets/AI%20Images/Products/image_23d113a5aad79ea4.png', thumb: 'assets/AI%20Images/thumbs/image_23d113a5aad79ea4.webp' },
+  { full: 'assets/AI%20Images/Products/image_24fe7202bba44df7.png', thumb: 'assets/AI%20Images/thumbs/image_24fe7202bba44df7.webp' },
+  { full: 'assets/AI%20Images/Products/image_266c9b39778da496.png', thumb: 'assets/AI%20Images/thumbs/image_266c9b39778da496.webp' },
+  { full: 'assets/AI%20Images/Products/image_37c8a8111e294645.png', thumb: 'assets/AI%20Images/thumbs/image_37c8a8111e294645.webp' },
+  { full: 'assets/AI%20Images/Products/image_3baa96084e02e9ef.png', thumb: 'assets/AI%20Images/thumbs/image_3baa96084e02e9ef.webp' },
+  { full: 'assets/AI%20Images/Products/image_4326fa952981a5a7.png', thumb: 'assets/AI%20Images/thumbs/image_4326fa952981a5a7.webp' },
+  { full: 'assets/AI%20Images/Products/image_4382b9bd37e0ecbc.png', thumb: 'assets/AI%20Images/thumbs/image_4382b9bd37e0ecbc.webp' },
+  { full: 'assets/AI%20Images/Products/image_44061b3fc9cee6f8.png', thumb: 'assets/AI%20Images/thumbs/image_44061b3fc9cee6f8.webp' },
+  { full: 'assets/AI%20Images/Products/image_45c37fdb86acf9aa.png', thumb: 'assets/AI%20Images/thumbs/image_45c37fdb86acf9aa.webp' },
+  { full: 'assets/AI%20Images/Products/image_486f52419ce83450.png', thumb: 'assets/AI%20Images/thumbs/image_486f52419ce83450.webp' },
+  { full: 'assets/AI%20Images/Products/image_4c9e0505388b5691.png', thumb: 'assets/AI%20Images/thumbs/image_4c9e0505388b5691.webp' },
+  { full: 'assets/AI%20Images/Products/image_63c0025388e12bea.png', thumb: 'assets/AI%20Images/thumbs/image_63c0025388e12bea.webp' },
+  { full: 'assets/AI%20Images/Products/image_644368834e433788.png', thumb: 'assets/AI%20Images/thumbs/image_644368834e433788.webp' },
+  { full: 'assets/AI%20Images/Products/image_683e7056a899be7b.png', thumb: 'assets/AI%20Images/thumbs/image_683e7056a899be7b.webp' },
+  { full: 'assets/AI%20Images/Products/image_6_b41ab8d56b60406e.png', thumb: 'assets/AI%20Images/thumbs/image_6_b41ab8d56b60406e.webp' },
+  { full: 'assets/AI%20Images/Products/image_6a699026e1bd41f7.png', thumb: 'assets/AI%20Images/thumbs/image_6a699026e1bd41f7.webp' },
+  { full: 'assets/AI%20Images/Products/image_6b047b384d39a954.png', thumb: 'assets/AI%20Images/thumbs/image_6b047b384d39a954.webp' },
+  { full: 'assets/AI%20Images/Products/image_6d1f1d6b0eadfed7.png', thumb: 'assets/AI%20Images/thumbs/image_6d1f1d6b0eadfed7.webp' },
+  { full: 'assets/AI%20Images/Products/image_72364af6b30ad2d7.png', thumb: 'assets/AI%20Images/thumbs/image_72364af6b30ad2d7.webp' },
+  { full: 'assets/AI%20Images/Products/image_79be7d4642dc8590.png', thumb: 'assets/AI%20Images/thumbs/image_79be7d4642dc8590.webp' },
+  { full: 'assets/AI%20Images/Products/image_7_561731b2d9bbf505.png', thumb: 'assets/AI%20Images/thumbs/image_7_561731b2d9bbf505.webp' },
+  { full: 'assets/AI%20Images/Products/image_7a91445e1dff4d31.png', thumb: 'assets/AI%20Images/thumbs/image_7a91445e1dff4d31.webp' },
+  { full: 'assets/AI%20Images/Products/image_7dc811a0aec09292.png', thumb: 'assets/AI%20Images/thumbs/image_7dc811a0aec09292.webp' },
+  { full: 'assets/AI%20Images/Products/image_7dfec0ab81c2a2db.png', thumb: 'assets/AI%20Images/thumbs/image_7dfec0ab81c2a2db.webp' },
+  { full: 'assets/AI%20Images/Products/image_7f9f7f4df9e8df20.png', thumb: 'assets/AI%20Images/thumbs/image_7f9f7f4df9e8df20.webp' },
+  { full: 'assets/AI%20Images/Products/image_8029ef2d48a7a83e.png', thumb: 'assets/AI%20Images/thumbs/image_8029ef2d48a7a83e.webp' },
+  { full: 'assets/AI%20Images/Products/image_850db235ff777235.png', thumb: 'assets/AI%20Images/thumbs/image_850db235ff777235.webp' },
+  { full: 'assets/AI%20Images/Products/image_8_ebc60d0e33be6d34.png', thumb: 'assets/AI%20Images/thumbs/image_8_ebc60d0e33be6d34.webp' },
+  { full: 'assets/AI%20Images/Products/image_8f8fc17074b83653.png', thumb: 'assets/AI%20Images/thumbs/image_8f8fc17074b83653.webp' },
+  { full: 'assets/AI%20Images/Products/image_9037286eb8114099.png', thumb: 'assets/AI%20Images/thumbs/image_9037286eb8114099.webp' },
+  { full: 'assets/AI%20Images/Products/image_90832bc18796d261.png', thumb: 'assets/AI%20Images/thumbs/image_90832bc18796d261.webp' },
+  { full: 'assets/AI%20Images/Products/image_94f99283d66b2483.png', thumb: 'assets/AI%20Images/thumbs/image_94f99283d66b2483.webp' },
+  { full: 'assets/AI%20Images/Products/image_95083082114a653b.png', thumb: 'assets/AI%20Images/thumbs/image_95083082114a653b.webp' },
+  { full: 'assets/AI%20Images/Products/image_9989ba3d886296b8.png', thumb: 'assets/AI%20Images/thumbs/image_9989ba3d886296b8.webp' },
+  { full: 'assets/AI%20Images/Products/image_9_b3006047d566ab4f.png', thumb: 'assets/AI%20Images/thumbs/image_9_b3006047d566ab4f.webp' },
+  { full: 'assets/AI%20Images/Products/image_9e9087ff1ad561b3.png', thumb: 'assets/AI%20Images/thumbs/image_9e9087ff1ad561b3.webp' },
+  { full: 'assets/AI%20Images/Products/image_a40133c4b04bf32f.png', thumb: 'assets/AI%20Images/thumbs/image_a40133c4b04bf32f.webp' },
+  { full: 'assets/AI%20Images/Products/image_a64aeaa7f0c12efc.png', thumb: 'assets/AI%20Images/thumbs/image_a64aeaa7f0c12efc.webp' },
+  { full: 'assets/AI%20Images/Products/image_ab5fe90828c11d0e.png', thumb: 'assets/AI%20Images/thumbs/image_ab5fe90828c11d0e.webp' },
+  { full: 'assets/AI%20Images/Products/image_b70cfa48e4980170.png', thumb: 'assets/AI%20Images/thumbs/image_b70cfa48e4980170.webp' },
+  { full: 'assets/AI%20Images/Products/image_bda4bd062362a519.png', thumb: 'assets/AI%20Images/thumbs/image_bda4bd062362a519.webp' },
+  { full: 'assets/AI%20Images/Products/image_be2777810d7fd739.png', thumb: 'assets/AI%20Images/thumbs/image_be2777810d7fd739.webp' },
+  { full: 'assets/AI%20Images/Products/image_c1d5d4d09b84ee65.png', thumb: 'assets/AI%20Images/thumbs/image_c1d5d4d09b84ee65.webp' },
+  { full: 'assets/AI%20Images/Products/image_c53b8da4e04a8cef.png', thumb: 'assets/AI%20Images/thumbs/image_c53b8da4e04a8cef.webp' },
+  { full: 'assets/AI%20Images/Products/image_c59e9ba4815daf4b.png', thumb: 'assets/AI%20Images/thumbs/image_c59e9ba4815daf4b.webp' },
+  { full: 'assets/AI%20Images/Products/image_cc48e67de18fa4a0.png', thumb: 'assets/AI%20Images/thumbs/image_cc48e67de18fa4a0.webp' },
+  { full: 'assets/AI%20Images/Products/image_d29087db0afc36c5.png', thumb: 'assets/AI%20Images/thumbs/image_d29087db0afc36c5.webp' },
+  { full: 'assets/AI%20Images/Products/image_d31fff41b679c8a8.png', thumb: 'assets/AI%20Images/thumbs/image_d31fff41b679c8a8.webp' },
+  { full: 'assets/AI%20Images/Products/image_d3ba665a74a7dea2.png', thumb: 'assets/AI%20Images/thumbs/image_d3ba665a74a7dea2.webp' },
+  { full: 'assets/AI%20Images/Products/image_d47520a126c23970.png', thumb: 'assets/AI%20Images/thumbs/image_d47520a126c23970.webp' },
+  { full: 'assets/AI%20Images/Products/image_d774dd2bb784e133.png', thumb: 'assets/AI%20Images/thumbs/image_d774dd2bb784e133.webp' },
+  { full: 'assets/AI%20Images/Products/image_dd53e55e4de608b3.png', thumb: 'assets/AI%20Images/thumbs/image_dd53e55e4de608b3.webp' },
+  { full: 'assets/AI%20Images/Products/image_e65740e75f025652.png', thumb: 'assets/AI%20Images/thumbs/image_e65740e75f025652.webp' },
+  { full: 'assets/AI%20Images/Products/image_e79e7125b9aa004b.png', thumb: 'assets/AI%20Images/thumbs/image_e79e7125b9aa004b.webp' },
+  { full: 'assets/AI%20Images/Products/image_eeafb1884765ade6.png', thumb: 'assets/AI%20Images/thumbs/image_eeafb1884765ade6.webp' },
+  { full: 'assets/AI%20Images/Products/image_f7c7f270b5c6a061.png', thumb: 'assets/AI%20Images/thumbs/image_f7c7f270b5c6a061.webp' },
+  { full: 'assets/AI%20Images/Products/image_fbfc5127384c4937.png', thumb: 'assets/AI%20Images/thumbs/image_fbfc5127384c4937.webp' },
+  { full: 'assets/AI%20Images/Products/media-c2b2608c6e29154d.png', thumb: 'assets/AI%20Images/thumbs/media-c2b2608c6e29154d.webp' },
 ];
-
-const ALL_IMAGES = IMAGE_FILES.map(name => ({
-  full:  `${ASSET_BASE}Products/${name}.png`,
-  thumb: `${ASSET_BASE}thumbs/${name}.webp`,
-  category: 'product',
-  catLabel: 'AI Product',
-}));
 
 function createImg(src, lazy) {
   const el = document.createElement('img');
@@ -338,25 +379,42 @@ function createImg(src, lazy) {
 })();
 
 /* ═══════ Gallery ═══════ */
+let revealObserver;
 let currentLb = 0;
+const GALLERY_PAGE_SIZE = 20;
+let galleryLoaded = 0;
 
-(function buildGallery() {
-  const grid = document.getElementById('galleryGrid');
+function updateGalleryCount() {
   const count = document.getElementById('galleryCount');
-  if (!grid) return;
-  count.textContent = ALL_IMAGES.length + ' ' + T[currentLang]['gallery.unit'];
+  if (count) count.textContent = ALL_IMAGES.length + ' ' + T[currentLang]['gallery.unit'];
+}
 
-  ALL_IMAGES.forEach((img, i) => {
+function loadMoreGallery() {
+  const grid = document.getElementById('galleryGrid');
+  const btn  = document.getElementById('galleryLoadMore');
+  if (!grid) return;
+
+  const end = Math.min(galleryLoaded + GALLERY_PAGE_SIZE, ALL_IMAGES.length);
+  for (let i = galleryLoaded; i < end; i++) {
+    const img  = ALL_IMAGES[i];
     const item = document.createElement('div');
     item.className = 'gallery-item reveal';
     item.dataset.index = i;
-
-    const image = createImg(img.thumb, true);
-    item.appendChild(image);
-
+    item.appendChild(createImg(img.thumb, true));
     item.addEventListener('click', () => openLightbox(i));
     grid.appendChild(item);
-  });
+    if (revealObserver) revealObserver.observe(item);
+  }
+  galleryLoaded = end;
+
+  if (btn) btn.style.display = galleryLoaded >= ALL_IMAGES.length ? 'none' : '';
+}
+
+(function buildGallery() {
+  updateGalleryCount();
+  loadMoreGallery();
+  const btn = document.getElementById('galleryLoadMore');
+  if (btn) btn.addEventListener('click', loadMoreGallery);
 })();
 
 /* ═══════ Lightbox ═══════ */
@@ -449,7 +507,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* ═══════ Scroll Reveal ═══════ */
-const revealObserver = new IntersectionObserver(entries => {
+revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('revealed');
