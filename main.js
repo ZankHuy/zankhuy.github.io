@@ -30,13 +30,14 @@ const T = {
     'skill.ai.d':    'Sử dụng AI tools tạo hình ảnh chất lượng cao — product photography, portrait, kiến trúc và food styling.',
     'skill.color.t': 'Chỉnh màu',
     'skill.color.d': 'Chỉnh màu chuyên nghiệp cho video RAW/LOG. Color Correction và Color Grading trên DaVinci Resolve.',
-    'skill.audio.t': 'Sản xuất Âm thanh',
-    'skill.audio.d': 'Lồng ghép SFX, tune âm thanh Background music và Voice. Fairlight Audio trên DaVinci Resolve.',
-
     'gallery.label':   'Bộ sưu tập',
     'gallery.heading': 'Tác phẩm<br>AI Art',
     'gallery.all':     'Tất cả',
     'gallery.unit':    'tác phẩm',
+
+    'videos.label':   'Tác phẩm',
+    'videos.heading': 'Video của tôi',
+    'nav.videos':     'Video',
 
     'wf.label':   'Quy trình',
     'wf.heading': 'Quy trình<br>Edit Video',
@@ -51,10 +52,8 @@ const T = {
     'wf4.d': 'Custom compositing bằng Fusion tùy project — masking, tracking, green screen keying và node-based VFX.',
     'wf5.t': 'Color Correction & Grading',
     'wf5.d': 'Color Correction chuẩn hóa màu sắc, sau đó Color Grading tạo mood và look cinematic cho video.',
-    'wf6.t': 'Fairlight Audio',
-    'wf6.d': 'Tune âm thanh, lồng ghép SFX, mix background music và voice. Đảm bảo audio chất lượng broadcast.',
-    'wf7.t': 'Đóng gói & Xuất bản',
-    'wf7.d': 'Render và export với codec phù hợp. Deliver sản phẩm cuối cùng theo đúng spec của platform và client.',
+    'wf6.t': 'Đóng gói & Xuất bản',
+    'wf6.d': 'Render và export với codec phù hợp. Deliver sản phẩm cuối cùng theo đúng spec của platform và client.',
 
     'extra.label':     'Kĩ năng phụ',
     'extra.heading':   'Kĩ năng bổ sung',
@@ -108,13 +107,14 @@ const T = {
     'skill.ai.d':    'Using AI tools to create high-quality images — product photography, portraits, architecture and food styling.',
     'skill.color.t': 'Color Grading',
     'skill.color.d': 'Professional color grading for RAW/LOG video. Color Correction and Color Grading in DaVinci Resolve.',
-    'skill.audio.t': 'Audio Production',
-    'skill.audio.d': 'SFX compositing, background music and voice tuning. Fairlight Audio in DaVinci Resolve.',
-
     'gallery.label':   'Gallery',
     'gallery.heading': 'AI Generated<br>Artworks',
     'gallery.all':     'All',
     'gallery.unit':    'artworks',
+
+    'videos.label':   'My Work',
+    'videos.heading': 'My Videos',
+    'nav.videos':     'Videos',
 
     'wf.label':   'Workflow',
     'wf.heading': 'Video Editing<br>Workflow',
@@ -129,10 +129,8 @@ const T = {
     'wf4.d': 'Custom compositing with Fusion per project — masking, tracking, green screen keying and node-based VFX.',
     'wf5.t': 'Color Correction & Grading',
     'wf5.d': 'Color Correction to normalize colors, then Color Grading to create cinematic mood and look.',
-    'wf6.t': 'Fairlight Audio',
-    'wf6.d': 'Audio tuning, SFX compositing, background music and voice mixing. Ensuring broadcast-quality audio.',
-    'wf7.t': 'Package & Delivery',
-    'wf7.d': 'Render and export with appropriate codecs. Delivering the final product per platform and client specs.',
+    'wf6.t': 'Package & Delivery',
+    'wf6.d': 'Render and export with appropriate codecs. Delivering the final product per platform and client specs.',
 
     'extra.label':     'Additional Skills',
     'extra.heading':   'Also Skilled In',
