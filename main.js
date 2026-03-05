@@ -7,6 +7,7 @@ const T = {
   vi: {
     'nav.skills':    'Kĩ năng',
     'nav.gallery':   'Bộ sưu tập',
+    'nav.videos':    'Video',
     'nav.workflow':  'Quy trình',
     'nav.about':     'Giới thiệu',
     'nav.contact':   'Liên hệ',
@@ -30,14 +31,16 @@ const T = {
     'skill.ai.d':    'Sử dụng AI tools tạo hình ảnh chất lượng cao — product photography, portrait, kiến trúc và food styling.',
     'skill.color.t': 'Chỉnh màu',
     'skill.color.d': 'Chỉnh màu chuyên nghiệp cho video RAW/LOG. Color Correction và Color Grading trên DaVinci Resolve.',
+
     'gallery.label':   'Bộ sưu tập',
     'gallery.heading': 'Tác phẩm<br>AI Art',
     'gallery.all':     'Tất cả',
     'gallery.unit':    'tác phẩm',
 
-    'videos.label':   'Tác phẩm',
-    'videos.heading': 'Video của tôi',
-    'nav.videos':     'Video',
+    'videos.label':        'Tác phẩm',
+    'videos.heading':      'Video của tôi',
+    'videos.clips_label':  'AI Tạo ra',
+    'videos.clips_heading':'AI Image-to-Video Clips',
 
     'wf.label':   'Quy trình',
     'wf.heading': 'Quy trình<br>Edit Video',
@@ -84,6 +87,7 @@ const T = {
   en: {
     'nav.skills':    'Skills',
     'nav.gallery':   'Gallery',
+    'nav.videos':    'Videos',
     'nav.workflow':  'Workflow',
     'nav.about':     'About',
     'nav.contact':   'Contact',
@@ -107,14 +111,16 @@ const T = {
     'skill.ai.d':    'Using AI tools to create high-quality images — product photography, portraits, architecture and food styling.',
     'skill.color.t': 'Color Grading',
     'skill.color.d': 'Professional color grading for RAW/LOG video. Color Correction and Color Grading in DaVinci Resolve.',
+
     'gallery.label':   'Gallery',
     'gallery.heading': 'AI Generated<br>Artworks',
     'gallery.all':     'All',
     'gallery.unit':    'artworks',
 
-    'videos.label':   'My Work',
-    'videos.heading': 'My Videos',
-    'nav.videos':     'Videos',
+    'videos.label':        'My Work',
+    'videos.heading':      'My Videos',
+    'videos.clips_label':  'AI Generated',
+    'videos.clips_heading':'AI Image-to-Video Clips',
 
     'wf.label':   'Workflow',
     'wf.heading': 'Video Editing<br>Workflow',
